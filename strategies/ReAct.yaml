@@ -2,8 +2,8 @@ identity:
   name: mcp_sse_ReAct
   author: junjiem
   label:
-    en_US: ReAct (Support MCP Tools)
-    zh_Hans: ReAct (支持 MCP 工具)
+    en_US: ReAct (Support MCP Tools) [InertiaKT]
+    zh_Hans: ReAct (支持 MCP 工具) [InertiaKT]
 description:
   en_US: ReAct is a basic strategy for agent, model will use the Dify and MCP tools provided to perform the task.
   zh_Hans: ReAct 是一个基本的 Agent 策略，模型将使用提供的 Dify 和 MCP 工具来执行任务。

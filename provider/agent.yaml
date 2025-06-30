@@ -2,8 +2,8 @@ identity:
   author: junjiem
   name: mcp_see_agent
   label:
-    en_US: Support MCP Tools Agent
-    zh_Hans: 支持 MCP 工具的 Agent
+    en_US: Support MCP Tools Agent [InertiaKT]
+    zh_Hans: 支持 MCP 工具的 Agent [InertiaKT]
   description:
     en_US: Support MCP Tools Agent
     zh_Hans: 支持 MCP 工具的 Agent

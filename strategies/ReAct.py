@@ -117,6 +117,7 @@ class ReActAgentStrategy(AgentStrategy):
         run_agent_state = True
         llm_usage: dict[str, Optional[LLMUsage]] = {"usage": None}
         final_answer = ""
+        tool_invoke_records = []
         prompt_messages = []
 
         # Init model
@@ -342,6 +343,13 @@ class ReActAgentStrategy(AgentStrategy):
                         },
                     )
 
+                    # 记录工具调用参数与结果
+                    tool_invoke_records.append({
+                        "tool_name": tool_name,
+                        "tool_invoke_parameters": tool_invoke_parameters,
+                        "tool_invoke_response": tool_invoke_response,
+                    })
+
                 # update prompt tool message
                 for prompt_tool in self._prompt_messages_tools:
                     if prompt_tool.name in tool_instances:
@@ -382,6 +390,7 @@ class ReActAgentStrategy(AgentStrategy):
             mcp_clients.close()
 
         yield self.create_text_message(final_answer)
+        yield self.create_json_message({"tool_invoke_records": tool_invoke_records})
         yield self.create_json_message(
             {
                 "execution_metadata": {
